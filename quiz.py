@@ -39,8 +39,20 @@ def question_three():
 
 def question_four():
     question = "Which of the following is NOT a concentration at Make School? Please enter a letter. \n a) Data Science \n b) Front End Web \n c) 3D Animation \n d) Mobile \n e) Back End Web \n"
-    response = input(lower(question))
+    response = input(question).lower()
     correct_answer = "c"
+    if response == correct_answer:
+        print("Correct!")
+        return 1
+    elif response != correct_answer:
+        print("Sorry, wrong answer!")
+        incorrect_questions.append(question)
+        return 0
+
+def question_five():
+    question = "How many years is the Bachelors Program at Make School typically? Enter answer in form of integer: "
+    response = input(question)
+    correct_answer = "2"
     if response == correct_answer:
         print("Correct!")
         return 1
@@ -62,6 +74,8 @@ total_score += points
 points = question_three()
 total_score += points
 points = question_four()
+total_score += points
+points = question_five()
 total_score += points
 
 info()
